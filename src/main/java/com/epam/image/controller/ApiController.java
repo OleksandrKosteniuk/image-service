@@ -30,4 +30,9 @@ public class ApiController {
     public ResponseEntity<?> getImagesByLabel(@PathVariable String label) {
         return ResponseEntity.ok(dynamoDbService.getImagesByLabel(label));
     }
+
+    @GetMapping("/health")
+    public ResponseEntity<?> healthCheck() {
+        return ResponseEntity.ok().build();
+    }
 }
